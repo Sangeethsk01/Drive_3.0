@@ -1,0 +1,133 @@
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures modal is on top */
+}
+
+.modalContainer {
+  width: 600px;
+  max-width: 100%;
+  height: auto; /* Changed to auto for flexibility */
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  text-align: center; /* Center text by default */
+}
+
+.title {
+  padding: 5px;
+  font-weight: bold; /* Added bold for emphasis */
+}
+
+.modalContainer .body {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer button {
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background-color: crimson; /* Keeping the cancel button color */
+}
+
+.address {
+  display: block;
+  margin: auto;
+  height: 30px;
+  width: 330px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input[type="text"]:focus {
+  background-color: rgb(237, 239, 240);
+}
+
+label {
+  margin-bottom: 10px; /* Spacing between label and select */
+  display: block; /* Make label a block element for better layout */
+}
+
+#displayList {
+  justify-content: center;
+  width: 80%;
+  list-style-type: none; 
+  padding: 6px;
+  margin: 0 auto;
+  background-color: rgba(58, 57, 57, 0.176);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.displayList {
+  list-style-type: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.listItem {
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between the address and button */
+  background-color: rgb(255, 252, 252); /* Slightly lighter background for a subtle look */
+  margin: 8px 0; /* Space between list items */
+  padding: 10px 15px; /* More padding for better appearance */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.otherAddress {
+  flex: 1; /* Make the address take up remaining space */
+  margin-right: 12px; /* Space between the address and the button */
+  font-weight: 500; /* Slightly bolder font for better readability */
+  color: #333; /* Darker text color */
+  text-align: left; /* Align text to the left */
+}
+
+.remove-access-btn {
+  background-color: crimson; /* Button color */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px 10px; /* Padding for a comfortable click area */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition effect */
+}
+
+.remove-access-btn:hover {
+  background-color: darkred; /* Darker color on hover */
+}
+
+
+

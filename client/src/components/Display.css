@@ -1,0 +1,41 @@
+.input-address{
+  align-items: center;
+  margin-bottom: 20px;
+}
+.address {
+  width: 40%;
+  height: 20px;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.button {
+  height: 28px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #bffe2b;
+  border-width: 2px;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: yellowgreen;
+}
+
+.clear {
+  background-color: aliceblue;
+}
+.clear:hover {
+  background-color: rgba(89, 93, 93, 0.42);
+}
+
+.image-list {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  margin: 15px;
+}
