@@ -59,7 +59,7 @@
                 <input type='file' id='file-upload' name='data' className='file-input'
                 onChange={retriveFile} disabled={!account}></input>
                 <span className='textArea'>
-                    Image: {fileName ? fileName : <span>Nothing</span>}
+                    Image: {fileName ? fileName : <span>No image selected</span>}
                 </span>
                 <button type='submit' className='upload' disabled={!file}> 
                     Upload File

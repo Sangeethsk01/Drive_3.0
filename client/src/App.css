@@ -30,3 +30,9 @@
   .share:hover {
     background-color: rgb(164, 53, 53);
   }
+
+  .copyImg {
+    margin-left: 5px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }

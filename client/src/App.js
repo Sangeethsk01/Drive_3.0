@@ -7,12 +7,15 @@ import Display from "./components/Display";
 import Modal from "./components/Modal";
 
 
+
 function App() {
   const [account, setAccount] = useState('');
   
   const [contract, setContract] = useState(null);
   const [provider, setProvider] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+
+  const [copyImg, setCopyImg] = useState("/icons/copy.png");
 
   useEffect(() => {
     const connectWallet = async () => {
@@ -67,12 +70,11 @@ function App() {
       <p>Connected Account: { 
   account ? (
     <>
-      {account} 
-      <button 
-        className='copyAddr' 
-        onClick={() => { navigator.clipboard.writeText(account); }}>
-        Copy
-      </button>
+      {account}  
+         <img src={copyImg} alt='copy img' className='copyImg' height={20} onClick={() => { navigator.clipboard.writeText(account);
+         setCopyImg("/icons/copied.png");
+         setTimeout(()=>{setCopyImg("/icons/copy.png")},4000);
+}} />
     </>
   ) : (
     <span>Not connected</span>
