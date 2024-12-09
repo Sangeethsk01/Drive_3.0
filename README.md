@@ -5,7 +5,7 @@
 <div align="center">
   </a>
 
-<h3 align="center">Drive-3.0: A decentralized file sharing and storing application using blockchain> </h3>
+<h3 align="center">Drive-3.0: A decentralized file sharing and storing application using blockchain />
 
   <p align="center">
     A lightweight decentralized application for storing and sharing images on the IPFS network, leveraging blockchain technology and featuring a user-friendly interface.
