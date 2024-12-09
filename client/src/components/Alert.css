@@ -1,0 +1,11 @@
+.alertBox {
+    
+    height: 50px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: green;
+    font-size: 20px;
+    font-style: italic;
+}

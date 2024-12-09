@@ -47,7 +47,7 @@
   /* Styling for the "Upload File" button */
   .upload {
     padding: 10px 20px;
-    background-color: #28a745; /* Green color */
+    background-color:  #3dcb1d; /* Green color */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -57,6 +57,6 @@
   }
   
   .upload:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color:#e18402; /* Darker green on hover */
   }
   

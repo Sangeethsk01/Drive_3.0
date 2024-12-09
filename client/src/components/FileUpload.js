@@ -3,13 +3,15 @@
     import axios from "axios";
     import "./Display.css";
 
-    const FileUpload = ({contract,account}) => {
+    const FileUpload = ({contract,account,triggerAlert}) => {
         const [file,setFile] = useState(null);
         const [fileName, setFileName] = useState(null);
 
         const handleSubmit = async(event) => {
             event.preventDefault();
             if(file){
+                const uploadButton = document.getElementById("uploadBtn");
+                uploadButton.style.backgroundColor = "rgb(0, 100, 0)";
                 try{
                     const formData = new FormData();
                     formData.append("file",file);
@@ -28,14 +30,17 @@
                     
                     const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;                 console.log(ImgHash);
 
+                    
                     await contract.add(account,ImgHash);
+                    
 
-                    alert("Image uploaded successfully");
+                    triggerAlert("Image uploaded successfully");
                     setFileName("no Image selected");
                     setFile(null);
                 }catch(error){
-                    alert(error.message || JSON.stringify(error, null, 2));
+                    triggerAlert(error.message || JSON.stringify(error, null, 2));
                 }
+                uploadButton.style.backgroundColor = "#3dcb1d";
             }
         }
 
@@ -55,13 +60,14 @@
     return (
         <div className='top'>
             <form className='form' onSubmit={handleSubmit}>
+                <p>Choose an image for uploading.</p>
                 <label htmlFor='file-upload' className='choose-button'>Choose image</label>
                 <input type='file' id='file-upload' name='data' className='file-input'
                 onChange={retriveFile} disabled={!account}></input>
                 <span className='textArea'>
                     Image: {fileName ? fileName : <span>No image selected</span>}
                 </span>
-                <button type='submit' className='upload' disabled={!file}> 
+                <button type='submit' className='upload' id='uploadBtn' disabled={!file}> 
                     Upload File
                 </button>
             </form>

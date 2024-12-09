@@ -5,6 +5,8 @@ import { ethers } from "ethers";
 import FileUpload from "./components/FileUpload";
 import Display from "./components/Display";
 import Modal from "./components/Modal";
+import Alert from './components/Alert';
+import Gallery from './components/Gallery';
 
 
 
@@ -16,6 +18,15 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const [copyImg, setCopyImg] = useState("/icons/copy.png");
+  const [alertMessage, setAlertMessage] = useState("");
+
+  // function to trigger alert message across app
+  const triggerAlert = (message) => {
+    setAlertMessage(message);
+    setTimeout(()=>{
+      setAlertMessage("");
+    },10000);
+  }
 
   useEffect(() => {
     const connectWallet = async () => {
@@ -64,27 +75,40 @@ function App() {
     <>
     <div className="App">
     {!modalOpen && (<button className='share' onClick={()=>{setModalOpen(true)}}>Share</button>)}
-    {modalOpen && (<Modal setModalOpen={setModalOpen} contract={contract}></Modal>)}
+    {modalOpen && (<Modal setModalOpen={setModalOpen} contract={contract} triggerAlert={triggerAlert}></Modal>)}
       {/* You can implement your UI components here */}
       <h1>Welcome to the Drive 3.0</h1>
-      <p>Connected Account: { 
+      
+      <p><span className='connectedAcc'>Connected Account:</span> { 
   account ? (
     <>
-      {account}  
+      <div className='accountAddress'>{account} 
          <img src={copyImg} alt='copy img' className='copyImg' height={20} onClick={() => { navigator.clipboard.writeText(account);
          setCopyImg("/icons/copied.png");
          setTimeout(()=>{setCopyImg("/icons/copy.png")},4000);
-}} />
+}} /> </div> 
     </>
   ) : (
     <span>Not connected</span>
   ) 
 }
+
+<p>Please make sure you are connected to the blockchain network via <a href='https://metamask.io/download/'>MetaMask</a> extension.</p>
+If you are a new user, <button className='newuser' onClick={()=>{
+   window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth", // Adds smooth scrolling animation
+  });
+ }}>click here</button> to read the instructions.
  </p> 
-      {contract && <p>Contract Loaded Successfully!</p>}
+ 
+
       <FileUpload account={account}
-        contract={contract}></FileUpload>
-      <Display account={account} contract={contract}></Display>
+        contract={contract} triggerAlert={triggerAlert}></FileUpload>
+      <Alert message={alertMessage}></Alert>
+      <Display account={account} contract={contract} triggerAlert={triggerAlert}></Display>
+      <Gallery />
+
     </div>
     </>
   );

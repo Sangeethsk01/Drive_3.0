@@ -1,41 +1,90 @@
-.input-address{
-  align-items: center;
-  margin-bottom: 20px;
-}
-.address {
-  width: 40%;
-  height: 20px;
-  padding: 3px;
-  margin: 5px;
-  border-radius: 5px;
-}
-.button {
-  height: 28px;
-  margin: 5px;
-  border-radius: 5px;
-  font-weight: bold;
-  background-color: #bffe2b;
-  border-width: 2px;
-  cursor: pointer;
-}
-.button:hover{
+  .container {
+    padding-bottom: 200px;
+  }
+  
+  .address-input {
+    width: 400px;
+    height: 20px;
+    padding: 2px;
+    font-size: 15px;
+    border-radius: 5px;
+
+  }
+
+  .address-btn {
+    margin-left: 10px;
+    height:27px;
+    align-items: center;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #bffe2b;
+    border-width: 2px;
+    cursor: pointer;
+  }
+
+  .address-btn:hover {
+    background-color: yellowgreen;
+  }
+  
+
+ 
+  .button {
+    height: 28px; /* Keep consistent height with address */
+    margin: 10px; /* Remove extra margin */
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #bffe2b;
+    border-width: 2px;
+    cursor: pointer;
+  }
+
+.button:hover {
   background-color: yellowgreen;
 }
 
 .clear {
   background-color: aliceblue;
 }
+
 .clear:hover {
   background-color: rgba(89, 93, 93, 0.42);
 }
 
+.input-buttons {
+  display: flex; /* Flexbox for the second line of buttons (Get My Data and Clear) */
+  justify-content: center; 
+  margin-top: 10px; /* Add some space between the rows */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .image-list {
-  display:flex;
+  background-color: rgba(255, 255, 255, 0.688);
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 100px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
+.images {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
+
 
 .image {
   margin: 15px;
+}
+
+.bold-txt {
+  font-weight: bold;
 }
