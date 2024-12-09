@@ -3,7 +3,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Sangeethsk01/SocialMediaPlatform>
   </a>
 
 <h3 align="center">Drive-3.0: A decentralized file sharing and storing application using blockchain/h3>
